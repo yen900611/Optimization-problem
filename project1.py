@@ -3,7 +3,7 @@ from gurobipy import *
 import pandas as pd
 
 df = {}
-D_num = 1000
+D_num = 100
 df = pd.read_csv("prj1_test_data/Car_Demand_" + str(D_num) + ".csv")
 K_d = {}
 L_d = {}
@@ -18,7 +18,6 @@ for i in range(1, D_num + 1):  # -1是因為扣掉標題行
     T[i].append(df.iloc[i - 1]["Time_H"])
     T[i].append(df.iloc[i - 1]["Time_E"])
     C[i] = df.iloc[i - 1]["Penalty"]
-
 
 df2 = {}
 
